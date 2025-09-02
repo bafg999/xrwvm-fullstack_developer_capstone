@@ -1,0 +1,56 @@
+<html>
+<head>
+  <title>Contáctanos - Dealerships</title>
+  <!-- Enlaces a hojas de estilo -->
+  <link rel="stylesheet" href="/static/style.css">
+  <link rel="stylesheet" href="/static/bootstrap.min.css">
+</head>
+<body>
+  <!-- Barra de navegación -->
+  <nav class="navbar navbar-expand-lg navbar-light bg-info">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">Dealerships</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="/static/Home.html">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/static/About.html">About Us</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="/static/Contact.html">Contáctanos</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Contenido de la página -->
+  <div class="container mt-5">
+    <div class="card shadow-lg rounded-4 p-4">
+      <div class="text-center mb-4">
+        <img src="/static/cars.jpeg" alt="Imagen concesionario" class="img-fluid rounded" style="max-height: 250px;">
+      </div>
+
+      <h3 class="text-center text-info mb-4">Información de Contacto</h3>
+
+      <div class="row">
+        <div class="col-md-6 text-center border-end">
+          <img src="/static/contactus.png" alt="Soporte" width="120">
+        </div>
+        <div class="col-md-6">
+          <p><strong>Servicio al Cliente:</strong> soporte@dealerships.com</p>
+          <p><strong>Ventas Nacionales:</strong> ventas@dealerships.com</p>
+          <p><strong>Relaciones Públicas:</strong> pr@dealerships.com</p>
+          <p><strong>Teléfono:</strong> +57 312 555 7890</p>
+          <p><strong>Visítanos:</strong> www.dealerships.com</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
