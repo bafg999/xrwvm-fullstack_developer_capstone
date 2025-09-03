@@ -88,12 +88,42 @@ app.get('/fetchDealers/:state', async (req, res) => {
 
 // Express route to fetch dealer by a particular id
 app.get('/fetchDealer/:id', async (req, res) => {
-//Write your code here
-    try {
-    const documents = await Dealerships.find({dealership: req.params.id});
+  try {
+    const idAsNumber = Number(req.params.id);
+    const idAsString = req.params.id;
+
+    // el id recibido es un ObjectId válido?
+    let idAsObjectId = null;
+    if (mongoose.Types.ObjectId.isValid(idAsString)) {
+      idAsObjectId = new mongoose.Types.ObjectId(idAsString);
+    }
+
+    console.log("ID recibido:", idAsString, 
+                "| como número:", idAsNumber, 
+                "| como ObjectId:", idAsObjectId);
+
+    //filtro dinámico
+    const orConditions = [
+      { id: idAsString },   // id como string
+      { id: idAsNumber }    // id como number
+    ];
+
+    if (idAsObjectId) {
+      orConditions.push({ _id: idAsObjectId }); // _id de Mongo
+    }
+
+    // Buscar un solo dealer
+    const documents = await Dealerships.findOne({ $or: orConditions });
+    console.log("Resultado query:", documents);
+
+    if (!documents) {
+      return res.status(404).json({ error: `No se encontró un dealer con id: ${idAsString}` });
+    }
+
     res.json(documents);
   } catch (error) {
-    res.status(500).json({ error: 'Error fetching documents' });
+    console.error("Error al obtener dealer:", error);
+    res.status(500).json({ error: 'Error fetching dealer' });
   }
 });
 
