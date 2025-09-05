@@ -27,6 +27,8 @@ class CarModel(models.Model):
         (SEDAN, 'Sedan'),
         (SUV, 'SUV'),
         (WAGON, 'Wagon'),
+        (MERCEDES, 'Mercedes'),
+        (COUPE, 'Coupe'),
     ]
 
     carMake = models.ForeignKey(CarMake, on_delete=models.CASCADE)
