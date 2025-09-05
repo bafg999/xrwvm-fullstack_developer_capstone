@@ -23,6 +23,9 @@ class CarModel(models.Model):
     SEDAN = 'Sedan'
     SUV = 'SUV'
     WAGON = 'Wagon'
+    MERCEDES = 'Mercedes'
+    COUPE = 'Coupe'
+    
     TYPE_CHOICES = [
         (SEDAN, 'Sedan'),
         (SUV, 'SUV'),
